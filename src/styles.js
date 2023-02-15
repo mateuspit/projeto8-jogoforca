@@ -11,6 +11,21 @@ export const LetterStyleBoxOn = styled.div`
     border-radius: 3px;
     border: solid 1px #7AA7C7;
     margin-right: 12px;
+    margin-bottom: 11px;
+`;
+
+export const LetterStyleBoxOff = styled.div`
+    background-color: #9FAAB5;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #798A9F;
+    border-radius: 3px;
+    border: solid 1px #7AA7C7;
+    margin-right: 12px;
+    margin-bottom: 11px;
 `;
 
 export const AllLettersSpot = styled.div`
