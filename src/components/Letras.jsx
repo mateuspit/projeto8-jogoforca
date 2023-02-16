@@ -6,9 +6,10 @@ export default function Letras() {
         <>
             <AllLettersSpot>
                 {alfabeto.map((w, index) => (
-                    <LetterStyleBoxOff>
+                    // fazer logica para letra valida ou não
+                    <LetterStyleBoxOn>
                         <Letra key={index} letra={w} />
-                    </LetterStyleBoxOff>
+                    </LetterStyleBoxOn>
                 ))}
             </AllLettersSpot>
         </>
