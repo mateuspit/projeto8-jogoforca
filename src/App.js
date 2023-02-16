@@ -1,6 +1,7 @@
 import palavras from "./palavras.js";
 import Letras from "./components/Letras";
 import Jogo from "./components/Jogo";
+import Guess from "./components/Guess";
 
 export default function App() {
   console.log(palavras);
@@ -8,6 +9,7 @@ export default function App() {
     <div className="App">
       <Jogo />      
       <Letras />
+      <Guess/>
     </div>
   );
 }

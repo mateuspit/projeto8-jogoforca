@@ -41,7 +41,7 @@ export const AllLettersSpot = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 152px;
+    margin-bottom: 56px;
     margin-top: 70px;
     margin-left: 211px ;
 `;
@@ -107,5 +107,47 @@ export const WordSucessfully = styled.div`
     font-size: 50px;
     margin-right: 53px;
     color: green;
+`;
+
+export const LabelGuess = styled.div`
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const InputGuess = styled.input`
+    width: 353px;
+    height: 40px;
+    border-radius: 3px;
+    border: solid 1px #CCCCCC;
+    margin-right: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+`;
+
+export const ButtonGuess = styled.div`
+    width: 100px;
+    height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #3C76A1;
+    background-color: #E1ECF4;
+    border-radius: 3px;
+    border: solid 1px #7AA7C7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const GuessSpot = styled.div`
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: 231px;
+    margin-bottom: 56px;
 `;
 
