@@ -145,7 +145,6 @@ export const ButtonGuess = styled.div`
 
 export const GuessSpot = styled.div`
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     margin-left: 231px;
     margin-bottom: 56px;
