@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+<div align="center">
+<img title="a title" alt="Alt text" src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw700">
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Informações sobre o projeto!
 
-In the project directory, you can run:
+### Acesse o projeto: <a href="https://mateuspit.github.io/projeto7-instagramreact/"> 🔗 Instagram react </a>
 
-### `npm start`
+Acesse informações sobre o projeto:
+<div align="center"><h3>
+<a href="#Contextualizacao"> 🪧 Contextualização</a><br>
+<a href="#Tecnologias"> 👨‍💻 Tecnologias utilizadas<br></a>
+<a href="#Requisitos"> 📜 Requisitos do projeto<br></a>
+</h3></div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## <div id="Contextualizacao"> 🪧 Contextualização:</div><br>
+Este projeto foi desenvolvido para trabalhar os conceitos aprendidos sobre React mais especificamente: conceito de componentização, as props dos componentes do React e, por fim, estado do componente utilizando useState. Este é o primeiro projeto de React, portanto, tem baixa complexidade.<br><br>
 
-### `npm test`
+## <div id="Tecnologias"> 👨‍💻 Tecnologias utilizadas:</div><br>
+Neste projeto foram utilizados HTML, CSS, JavaScript e React. Todo o projeto foi versionado utilizando git e github. O projeto foi codificado utilizando o editor de texto, VS Code.<br><br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## <div id="Requisitos"> 📜 Requisitos do projeto:</div><br>
+- Você deve criar seu projeto usando o comando create-react-app:<br>
+- Arquivos CSS devem ser colocados na pasta public e linkados diretamente no index.html da pasta public.<br>
+- Você também deve criar, dentro da `public`, uma pasta `assets` para colocar as imagens.<br>
+- A página deve ser componentizada em arquivos diferentes, utilizando import/export:
+  <details>
+    <summary>    
+        Componentes
+    </summary>
+  - App<br>
+  - Corpo<br>
+  - SideBar<br>
+  - NavBar<br>
+  - Usuario<br>
+  - Stories<br>
+  - Posts<br>
+  - Sugestoes<br>
+  <div align="center"><img title="a title" alt="Alt text" src="./public/assets/DistribuicaoDosComponentes.png"></div>
+   </details>
+- Todos os itens repetitivos do projeto devem ser representados como Arrays/Objetos nos componentes e renderizados no JSX usando
+  <details>
+  <summary>
+  Itens pretitivos
+  </summary>
+  - Os stories (deve ter pelo menos 3 stories)<br>
+  - Os posts (deve ter pelo menos 3 posts)<br>
+  - As sugestões de seguidores (deve ter pelo menos 3 sugestões)<br>
+  </details>
+- Nome de usuário (ao apertar o lápis, aparece um prompt para alterá-lo). Se for passada uma string vazia, não atualiza.<br>
+- Imagem de perfil (ao clicar uma vez na imagem, aparece um `prompt` pedindo novo link). Se for passada uma string vazia, não atualiza.<br>
+- Salvar o post (ao clicar no ícone de salvar o post, ele deverá ficar preenchido).<br>
+  - Caso a postagem já esteja salva, ao clicar no ícone, a postagem deve passar para não salva.<br>
+- Ao clicar no ícone do like o usuário poderá curtir a postagem. Ou seja, o ícone de coração deverá ficar preenchido e vermelho.<br>
+  - Caso a postagem já esteja curtida, ao clicar no ícone, a postagem deve passar para não curtida.<br>
+- Ao clicar na imagem de um post do feed, o usuário poderá curtir a postagem, ou seja, o botão do like deverá ficar preenchido em vermelho.<br>
+  - Ao clicar na imagem de um post do feed, o usuário poderá curtir a postagem, ou seja, o botão do like deverá ficar preenchido em vermelho.<br>
+- Sobre a frase de “Curtido por fulano e outras xxx pessoas”.
+<details>
+<summary>
+Bônus (Requisitos opcionais)
+</summary>
+  
+- Para dar like clicando na imagem, é necessário clicar duas vezes seguidas, rapidamente.<br>
+  - Clicar duas vezes com um intervalo de tempo grande NÃO CONFIGURA double click. Só serão aceitas implementações usando onDoubleClick do React ou evento nativo equivalente.<br>
+- Quando ocorrer o double click na imagem, deverá surgir no centro da imagem um coração, que primeiro cresce e depois desaparece, como na imagem abaixo.<br>
+<div align="center"><img title="a title" alt="Alt text" src="./public/assets/heart.gif"></div>
+  </details>
