@@ -21,10 +21,20 @@ export default function Letras(props) {
 }
 
 function Letra(props) {
-    let [backGroundColor, setBackGroundColor] = React.useState("#E1ECF4");
+    // let [backGroundColor, setBackGroundColor] = React.useState("#E1ECF4");
+    let [backGroundColor, setBackGroundColor] = React.useState("#9FAAB5");
+    let [color, setcolor] = React.useState("#798A9F");
+    // const habilitar = true;
+
+    function enableGame(){
+        setBackGroundColor("#E1ECF4");
+        setcolor("#39739D");        
+    }
 
     function letterDisable(w) {
         setBackGroundColor("#9FAAB5");
+        setcolor("#798A9F");
+        // alert("sim");
     }
 
     return (

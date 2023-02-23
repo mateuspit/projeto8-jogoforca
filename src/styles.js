@@ -48,7 +48,7 @@ export const Reset = createGlobalStyle`
     
 `;
 
-export const LetterStyleBoxOn = styled.div`
+export const LetterStyleBoxOn = styled.button`
     background-color: #E1ECF4;
     width: 40px;
     height: 40px;
@@ -65,7 +65,7 @@ export const LetterStyleBoxOn = styled.div`
     font-size: 16px;
 `;
 
-export const LetterStyleBoxOff = styled.div`
+export const LetterStyleBoxOff = styled.button`
     background-color: #9FAAB5;
     width: 40px;
     height: 40px;
@@ -82,7 +82,7 @@ export const LetterStyleBoxOff = styled.div`
     font-size: 16px;
 `;
 
-export const LetterStyleBox = styled.div`
+export const LetterStyleBox = styled.button`
     /* background-color: #9FAAB5; */
     background-color: ${props => props.backGroundColor};
     width: 40px;
@@ -122,7 +122,7 @@ export const RightSide = styled.div`
     align-items: flex-end;
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
     width: 200px;
     height: 60px;
     border-radius: 8px;
@@ -194,7 +194,7 @@ export const InputGuess = styled.input`
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
 `;
 
-export const ButtonGuess = styled.div`
+export const ButtonGuess = styled.button`
     width: 100px;
     height: 40px;
     font-family: 'Roboto', sans-serif;
