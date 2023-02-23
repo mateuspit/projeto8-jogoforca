@@ -1,7 +1,9 @@
 import { LabelGuess, InputGuess, ButtonGuess, GuessSpot } from "../styles";
 
 
-export default function Guess() {
+export default function Chute(props) {
+    const testWord = props.randomWord;
+    console.log(testWord);
     return (
         <GuessSpot>
             <LabelGuess>

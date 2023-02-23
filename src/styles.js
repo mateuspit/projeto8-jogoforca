@@ -82,6 +82,24 @@ export const LetterStyleBoxOff = styled.div`
     font-size: 16px;
 `;
 
+export const LetterStyleBox = styled.div`
+    /* background-color: #9FAAB5; */
+    background-color: ${props => props.backGroundColor};
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #798A9F;
+    border-radius: 3px;
+    border: solid 1px #7AA7C7;
+    margin-right: 12px;
+    margin-bottom: 11px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+`;
+
 export const AllLettersSpot = styled.div`
     width: 710px;
     height: 91px;

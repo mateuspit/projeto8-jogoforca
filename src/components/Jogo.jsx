@@ -9,10 +9,12 @@ import forca4 from "./../assets/img/forca4.png";
 import forca5 from "./../assets/img/forca5.png";
 import forca6 from "./../assets/img/forca6.png";
 
-export default function Jogo() {
+export default function Jogo(props) {
     const defaultState = forca0;
-    const testWord = "Teste";
+    const testWord = props.randomWord;
     let blanksSpaces = "";
+
+    console.log(testWord);
 
     for (let i = 0; i < testWord.length; i++) {
         blanksSpaces += "<span>_ </span>";
