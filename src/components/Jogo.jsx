@@ -1,4 +1,6 @@
-import { LeftSide, RightSide, Button, Game, HangmanImage, ButtonsPanel, WordFinding, WordFailedTry, WordSucessfully } from "../styles";
+import { LeftSide, RightSide, Button, Game, 
+    HangmanImage, ButtonsPanel, WordFinding, 
+    WordFailedTry, WordSucessfully } from "../styles";
 import forca0 from "./../assets/img/forca0.png";
 import forca1 from "./../assets/img/forca1.png";
 import forca2 from "./../assets/img/forca2.png";
