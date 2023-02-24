@@ -9,6 +9,7 @@ export default function App() {
   // console.log(palavras);
   let randomWord = "";
   let [enableStatus, setEnableStatus] = React.useState(false);
+  const [triedWords, setTriedWords] = React.useState([]);
   const gameStats = {
     errosNumber: 0,
     enable: false,
@@ -16,18 +17,31 @@ export default function App() {
     word: ""
   }
 
-  function enableGame(){
-    if(gameStats.enable === false){
+  function analyzeWord(w) {
+    const newTriedWords = [...triedWords, w];
+    setTriedWords(newTriedWords);
+    console.log(newTriedWords);
+    let asciiLetterNumber = newTriedWords[newTriedWords.length - 1].charCodeAt();
+    console.log(asciiLetterNumber);
+    //+32 para ir pra minusculo
+    asciiLetterNumber = asciiLetterNumber + 32;
+    let asciiLetter = String.fromCharCode(asciiLetterNumber);
+    
+    console.log(asciiLetter);    
+  }
+
+  function enableGame() {
+    if (gameStats.enable === false) {
       enableStatus = true;
       setEnableStatus(enableStatus);
-      gameStats.enable = enableStatus;    
+      gameStats.enable = enableStatus;
       // console.log(gameStatus.enable);
       console.log(enableStatus);
       randomWord = getRandomWord();
     }
   }
 
-  function getRandomWord(){
+  function getRandomWord() {
     const randomNumber = Math.random();
     const randomWordPosition = Math.floor(randomNumber * palavras.length);
     const randomWord = palavras[randomWordPosition];
@@ -42,9 +56,17 @@ export default function App() {
   return (
     <div className="App">
       <Reset />
-      <Jogo randomWord={randomWord} gameStats={gameStats} gameStatus={enableGame}/>
-      <Letras randomWord={randomWord} gameStats={gameStats}/>
-      <Chute randomWord={randomWord}/>
+      <Jogo
+        randomWord={randomWord}
+        gameStats={gameStats}
+        gameStatus={enableGame}
+      />
+      <Letras
+        randomWord={randomWord}
+        gameStats={gameStats}
+        checkWord={analyzeWord}
+      />
+      <Chute randomWord={randomWord} gameStats={gameStats} />
     </div>
   );
 }
