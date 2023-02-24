@@ -90,7 +90,7 @@ export const LetterStyleBox = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #798A9F;
+    color: ${props => props.color};
     border-radius: 3px;
     border: solid 1px #7AA7C7;
     margin-right: 12px;

@@ -8,17 +8,21 @@ import forca3 from "./../assets/img/forca3.png";
 import forca4 from "./../assets/img/forca4.png";
 import forca5 from "./../assets/img/forca5.png";
 import forca6 from "./../assets/img/forca6.png";
+import React from "react";
 
 export default function Jogo(props) {
+    
     const defaultState = forca0;
-    const testWord = props.randomWord;
+    // const testWord = props.randomWord;
     let blanksSpaces = "";
+    
 
-    console.log(testWord);
+    // console.log(testWord);
 
-    for (let i = 0; i < testWord.length; i++) {
-        blanksSpaces += "<span>_ </span>";
-    }
+    // for (let i = 0; i < testWord.length; i++) {
+    //     blanksSpaces += "<span>_ </span>";
+    // }
+    const variavel = false;
 
     return (
         <Game>
@@ -27,7 +31,8 @@ export default function Jogo(props) {
             </LeftSide>
             <RightSide>
                 <ButtonsPanel>
-                    <Button>
+                    {/* <Button onClick={()=>alert("1")}> */}
+                    <Button disabled={variavel} onClick={props.gameStatus}>
                         Escolher palavra
                     </Button>
                 </ButtonsPanel>
