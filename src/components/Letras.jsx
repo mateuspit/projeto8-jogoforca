@@ -39,7 +39,7 @@ function Letra(props) {
         setBackGroundColor("#9FAAB5");
         setcolor("#798A9F");
         // alert("sim");
-        console.log(props.gameStats);
+        // console.log(props.gameStats);
     }
 
     return (
