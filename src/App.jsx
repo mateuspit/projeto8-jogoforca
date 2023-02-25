@@ -44,20 +44,28 @@ export default function App() {
     // console.log("Palavra aleatoria em analise: ", randomWord);
 
     const randomWordSplit = randomWord.split("");
-    // console.log("Array da palavra escolhida: ",randomWordSplit);
+    console.log("Array da palavra escolhida: ",randomWordSplit);
 
     // console.log(randomWordSplit[i])
     // console.log(state.triedLetters[state.triedLetters.length-1])
-
+    let countAmount = 0;
+    let showLetter = "";
     for(let i = 0; i < randomWordSplit.length; i++){
       for(let j = 0; j < 1; j++){
         if(randomWordSplit[i] === state.triedLetters[state.triedLetters.length-1]){
-          alert("Achou");
+          countAmount++;
+          showLetter = randomWordSplit[i];
+        }        
+        else if (state.triedLetters[state.triedLetters.length-1] === "ú"){
+            
         }
       }
     }
+    alert(`Achou: ${countAmount} ${showLetter}`);
+
 
   }
+  
 
   function receivingLetter(letter) {
     // const newTriedWords = [...triedWords, w];
