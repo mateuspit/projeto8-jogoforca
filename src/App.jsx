@@ -13,8 +13,11 @@ export default function App() {
     clickedLetters: [],
     triedLetters: [],
     erros: 0,
+    rightAnswer: false,
     randomWord: "",
     randomWordSplit: [],
+    ableLetters: true,
+    ableGuess: true,
     styleWord: "Finding"
   });
 
@@ -44,60 +47,77 @@ export default function App() {
     // console.log("Palavra aleatoria em analise: ", randomWord);
 
     const randomWordSplit = randomWord.split("");
-    console.log("Array da palavra escolhida: ",randomWordSplit);
+    console.log("Array da palavra escolhida: ", randomWordSplit);
 
     // console.log(randomWordSplit[i])
     // console.log(state.triedLetters[state.triedLetters.length-1])
+    let errosDetector = 0;
     let countAmount = 0;
     let showLetter = "";
-    for(let i = 0; i < randomWordSplit.length; i++){
-      for(let j = 0; j < 1; j++){
-        if(randomWordSplit[i] === state.triedLetters[state.triedLetters.length-1]){
+    for (let i = 0; i < randomWordSplit.length; i++) {
+      for (let j = 0; j < 1; j++) {
+        if (randomWordSplit[i] === state.triedLetters[state.triedLetters.length - 1]) {
           countAmount++;
           showLetter = randomWordSplit[i];
-        }        
-        else if ((randomWordSplit[i] === "ú") && state.triedLetters[state.triedLetters.length-1]==="u"){  
-          countAmount++;
-          showLetter = randomWordSplit[i];      
-          alert("ú");   
+          alert("plota letra");
+          alert("desabilita letra");
         }
-        else if ((randomWordSplit[i] === "ç") && state.triedLetters[state.triedLetters.length-1]==="c"){
+        else if ((randomWordSplit[i] === "ú") && state.triedLetters[state.triedLetters.length - 1] === "u") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("ç");  
+          alert("ú");
+          alert("plota letra");
+          alert("desabilita letra");
         }
-        else if ((randomWordSplit[i] === "í") && state.triedLetters[state.triedLetters.length-1]==="i"){
+        else if ((randomWordSplit[i] === "ç") && state.triedLetters[state.triedLetters.length - 1] === "c") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("í");  
+          alert("ç");
+          alert("plota letra");
+          alert("desabilita letra");
         }
-        else if (randomWordSplit[i] === "é" || randomWordSplit[i] === "ê"){
+        else if ((randomWordSplit[i] === "í") && state.triedLetters[state.triedLetters.length - 1] === "i") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("é ou ê");  
+          alert("í");
+          alert("plota letra");
+          alert("desabilita letra");
         }
-        else if ((randomWordSplit[i] === "á" || randomWordSplit[i] === "â"|| randomWordSplit[i] === "ã")&& state.triedLetters[state.triedLetters.length-1]==="a"){
+        else if (randomWordSplit[i] === "é" || randomWordSplit[i] === "ê") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("à, â ou ã");  
+          alert("é ou ê");
+          alert("plota letra");
+          alert("desabilita letra");
         }
-        else if (randomWordSplit[i] === "ó" || randomWordSplit[i] === "ô"|| randomWordSplit[i] === "õ"){
+        else if ((randomWordSplit[i] === "á" || randomWordSplit[i] === "â" || randomWordSplit[i] === "ã") && state.triedLetters[state.triedLetters.length - 1] === "a") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("ó, ô ou õ");  
+          alert("à, â ou ã");
+          alert("plota letra");
+          alert("desabilita letra");
         }
-        else{
-          state.erros++;
-          setState({ ...state, erros: true })          
+        else if (randomWordSplit[i] === "ó" || randomWordSplit[i] === "ô" || randomWordSplit[i] === "õ") {
+          countAmount++;
+          showLetter = randomWordSplit[i];
+          alert("ó, ô ou õ");
+          alert("plota letra");
+          alert("desabilita letra");
         }
-        //funçao para colocar a letra na tela
+        else {
+          errosDetector++;
+        }
       }
+    }
+    if (errosDetector === randomWordSplit.length) {
+      state.erros++;
+      setState({ ...state, erros: state.erros })
     }
     alert(`Achou: ${countAmount} ${showLetter} agora vc tem ${state.erros} erros`);
 
 
   }
-  
+
 
   function receivingLetter(letter) {
     // const newTriedWords = [...triedWords, w];
@@ -114,7 +134,11 @@ export default function App() {
   function enableGame() {
     if (state.gameStatus === false) {
       state.gameStatus = true;
-      setState({ ...state, enableStatus: true })
+      setState({ ...state, enableStatus: state.gameStatus })
+      state.ableLetters = false;
+      setState({ ...state, ableLetters: state.ableLetters })
+      state.ableGuess = false;
+      setState({ ...state, ableGuess: state.ableGuess })
       // gameStats.enable = enableStatus;
       // console.log(gameStatus.enable);
       console.log("Jogo começou: ", state.gameStatus);
@@ -150,8 +174,13 @@ export default function App() {
         randomWord={randomWord}
         gameStats={gameStats}
         checkWord={analyzeWord}
+        ableLettersButton={state.ableLetters}
       />
-      <Chute randomWord={randomWord} gameStats={gameStats} />
+      <Chute
+        randomWord={randomWord}
+        gameStats={gameStats}
+        ableGuessButton={state.ableGuess}
+      />
     </div>
   );
 }

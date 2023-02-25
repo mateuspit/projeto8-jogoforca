@@ -13,7 +13,7 @@ export default function Chute(props) {
 
             </InputGuess >
             {/* <ButtonGuess onClick={()=>alert("3")}> */}
-            <ButtonGuess onClick={()=>alert("3")}>
+            <ButtonGuess disabled={props.ableGuessButton} onClick={()=>alert("3")}>
                 Chutar
             </ButtonGuess>
         </GuessSpot>

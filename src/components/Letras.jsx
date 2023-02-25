@@ -16,7 +16,7 @@ export default function Letras(props) {
             <AllLettersSpot>
                 {alfabetoMostrar.map((w, index) => (
                     // fazer logica para letra valida ou não
-                    <Letra checkWord={props.checkWord} letra={w} key={index} gameStats={props.gameStats}/>
+                    <Letra ableLettersButton={props.ableLettersButton} checkWord={props.checkWord} letra={w} key={index} gameStats={props.gameStats}/>
                 ))}
             </AllLettersSpot>
         </>
@@ -45,7 +45,7 @@ function Letra(props) {
     return (
         <>
         {/* <LetterStyleBox onClick={() => {letterDisable(props.letra); alert("2");}} backGroundColor={backGroundColor}> */}
-        <LetterStyleBox onClick={() => {letterDisable(props.letra); props.checkWord(props.letra);}} backGroundColor={backGroundColor} color={color}>
+        <LetterStyleBox disabled={props.ableLettersButton} onClick={() => {letterDisable(props.letra); props.checkWord(props.letra);}} backGroundColor={backGroundColor} color={color}>
             {props.letra}
         </LetterStyleBox>
         </>
