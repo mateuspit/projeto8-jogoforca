@@ -56,12 +56,44 @@ export default function App() {
           countAmount++;
           showLetter = randomWordSplit[i];
         }        
-        else if (state.triedLetters[state.triedLetters.length-1] === "ú"){
-            
+        else if ((randomWordSplit[i] === "ú") && state.triedLetters[state.triedLetters.length-1]==="u"){  
+          countAmount++;
+          showLetter = randomWordSplit[i];      
+          alert("ú");   
         }
+        else if ((randomWordSplit[i] === "ç") && state.triedLetters[state.triedLetters.length-1]==="c"){
+          countAmount++;
+          showLetter = randomWordSplit[i];
+          alert("ç");  
+        }
+        else if ((randomWordSplit[i] === "í") && state.triedLetters[state.triedLetters.length-1]==="i"){
+          countAmount++;
+          showLetter = randomWordSplit[i];
+          alert("í");  
+        }
+        else if (randomWordSplit[i] === "é" || randomWordSplit[i] === "ê"){
+          countAmount++;
+          showLetter = randomWordSplit[i];
+          alert("é ou ê");  
+        }
+        else if ((randomWordSplit[i] === "á" || randomWordSplit[i] === "â"|| randomWordSplit[i] === "ã")&& state.triedLetters[state.triedLetters.length-1]==="a"){
+          countAmount++;
+          showLetter = randomWordSplit[i];
+          alert("à, â ou ã");  
+        }
+        else if (randomWordSplit[i] === "ó" || randomWordSplit[i] === "ô"|| randomWordSplit[i] === "õ"){
+          countAmount++;
+          showLetter = randomWordSplit[i];
+          alert("ó, ô ou õ");  
+        }
+        else{
+          state.erros++;
+          setState({ ...state, erros: true })          
+        }
+        //funçao para colocar a letra na tela
       }
     }
-    alert(`Achou: ${countAmount} ${showLetter}`);
+    alert(`Achou: ${countAmount} ${showLetter} agora vc tem ${state.erros} erros`);
 
 
   }
