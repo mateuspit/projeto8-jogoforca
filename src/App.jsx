@@ -18,6 +18,8 @@ export default function App() {
     randomWordSplit: [],
     ableLetters: true,
     ableGuess: true,
+    backGroundColor: "#9FAAB5",
+    color: "#798A9F",
     styleWord: "Finding"
   });
 
@@ -146,7 +148,15 @@ export default function App() {
       state.randomWord = randomWord;
       setState({ ...state, randomWord: randomWord })
       console.log("Palavra sorteada: ", state.randomWord);
+      changingLettersBoxColor();
     }
+  }
+
+  function changingLettersBoxColor() {
+    state.backGroundColor = "#E1ECF4";
+    setState({ ...state, backGroundColor: state.backGroundColor })
+    state.color = "#39739D";
+    setState({ ...state, color: state.color })
   }
 
   function getRandomWord() {
@@ -175,6 +185,8 @@ export default function App() {
         gameStats={gameStats}
         checkWord={analyzeWord}
         ableLettersButton={state.ableLetters}
+        changingLettersBoxColor={state}
+        changingIndividualLetterBoxColor={setState}
       />
       <Chute
         randomWord={randomWord}
