@@ -34,6 +34,7 @@ export default function Letras(props) {
 function Letra(props) {
     let [backGroundColor, setBackGroundColor] = React.useState("#E1ECF4");
     let [color, setcolor] = React.useState("#39739D");
+    let [ableButton, setAbleButton] = React.useState(false);
     // let [backGroundColor, setBackGroundColor] = React.useState("#E1ECF4");
     // let [color, setcolor] = React.useState("#39739D");
 
@@ -54,15 +55,16 @@ function Letra(props) {
         // backGroundColor = "blue";
         setBackGroundColor(backGroundColor)
         color = "#798A9F";
-        // color = "red";
         setcolor(color);
+        ableButton = true;
+        setAbleButton(ableButton);
     }
 
     return (
         <>
             {/* <LetterStyleBox onClick={() => {letterDisable(props.letra); alert("2");}} backGroundColor={backGroundColor}> */}
             <LetterStyleBox
-                disabled={props.ableLettersButton}
+                disabled={props.changingLettersBoxColor.gameStatus ? ableButton : props.ableLettersButton}
                 onClick={() => {
                     letterDisable(props.letra);
                     props.checkWord(props.letra);

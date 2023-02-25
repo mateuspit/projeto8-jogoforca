@@ -62,49 +62,49 @@ export default function App() {
           countAmount++;
           showLetter = randomWordSplit[i];
           alert("plota letra");
-          alert("desabilita letra");
+          // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "ú") && state.triedLetters[state.triedLetters.length - 1] === "u") {
           countAmount++;
           showLetter = randomWordSplit[i];
           alert("ú");
           alert("plota letra");
-          alert("desabilita letra");
+          // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "ç") && state.triedLetters[state.triedLetters.length - 1] === "c") {
           countAmount++;
           showLetter = randomWordSplit[i];
           alert("ç");
           alert("plota letra");
-          alert("desabilita letra");
+          // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "í") && state.triedLetters[state.triedLetters.length - 1] === "i") {
           countAmount++;
           showLetter = randomWordSplit[i];
           alert("í");
           alert("plota letra");
-          alert("desabilita letra");
+          // alert("desabilita letra");
         }
         else if (randomWordSplit[i] === "é" || randomWordSplit[i] === "ê") {
           countAmount++;
           showLetter = randomWordSplit[i];
           alert("é ou ê");
           alert("plota letra");
-          alert("desabilita letra");
+          // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "á" || randomWordSplit[i] === "â" || randomWordSplit[i] === "ã") && state.triedLetters[state.triedLetters.length - 1] === "a") {
           countAmount++;
           showLetter = randomWordSplit[i];
           alert("à, â ou ã");
           alert("plota letra");
-          alert("desabilita letra");
+          // alert("desabilita letra");
         }
         else if (randomWordSplit[i] === "ó" || randomWordSplit[i] === "ô" || randomWordSplit[i] === "õ") {
           countAmount++;
           showLetter = randomWordSplit[i];
           alert("ó, ô ou õ");
           alert("plota letra");
-          alert("desabilita letra");
+          // alert("desabilita letra");
         }
         else {
           errosDetector++;
