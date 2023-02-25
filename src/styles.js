@@ -159,6 +159,13 @@ export const WordFinding = styled.div`
     margin-right: 53px;
 `;
 
+export const WordStyle = styled.div`
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    margin-right: 53px;
+`;
+
 export const WordFailedTry = styled.div`
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;

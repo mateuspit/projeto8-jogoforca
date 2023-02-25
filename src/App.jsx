@@ -12,7 +12,8 @@ export default function App() {
     gameStatus: false,
     clickedLetters: [],
     triedLetters: [],
-    erros: 0,
+    errors: 0,
+    image: 0,
     rightAnswer: false,
     randomWord: "",
     randomWordSplit: [],
@@ -26,7 +27,7 @@ export default function App() {
   const [triedWords, setTriedWords] = React.useState([]);
   const triedLetter = [];
   const gameStats = {
-    errosNumber: 0,
+    errorsNumber: 0,
     enable: false,
     styleGameWord: "Finding",
     word: "",
@@ -49,11 +50,11 @@ export default function App() {
     // console.log("Palavra aleatoria em analise: ", randomWord);
 
     const randomWordSplit = randomWord.split("");
-    console.log("Array da palavra escolhida: ", randomWordSplit);
+    // console.log("Array da palavra escolhida: ", randomWordSplit);
 
     // console.log(randomWordSplit[i])
     // console.log(state.triedLetters[state.triedLetters.length-1])
-    let errosDetector = 0;
+    let errorsDetector = 0;
     let countAmount = 0;
     let showLetter = "";
     for (let i = 0; i < randomWordSplit.length; i++) {
@@ -62,6 +63,8 @@ export default function App() {
           countAmount++;
           showLetter = randomWordSplit[i];
           alert("plota letra");
+          console.log(randomWordSplit.length);
+          // console.log(state.hits);
           // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "ú") && state.triedLetters[state.triedLetters.length - 1] === "u") {
@@ -107,17 +110,32 @@ export default function App() {
           // alert("desabilita letra");
         }
         else {
-          errosDetector++;
+          errorsDetector++;
         }
       }
     }
-    if (errosDetector === randomWordSplit.length) {
-      state.erros++;
-      setState({ ...state, erros: state.erros })
+    if (errorsDetector === randomWordSplit.length) {
+      state.errors++;
+      setState({ ...state, errors: state.errors })
     }
-    alert(`Achou: ${countAmount} ${showLetter} agora vc tem ${state.erros} erros`);
-
-
+    // alert(`Achou: ${countAmount} ${showLetter} agora vc tem ${state.errors} errors`);
+    state.hits += countAmount;
+    setState({ ...state, hits: state.hits })
+    // console.log("hits: ", state.hits);
+    if (state.errors === 6) {
+      state.rightAnswer = false;
+      setState({ ...state, rightAnswer: state.rightAnswer })
+      console.log("rightAnswer: ", state.rightAnswer);
+      alert("Perdeu doido");
+      alert("Travar o jogo");
+    }
+    else if (state.hits === randomWordSplit.length) {
+      state.rightAnswer = true;
+      setState({ ...state, rightAnswer: state.rightAnswer })
+      console.log("rightAnswer: ", state.rightAnswer);
+      alert("Ganhou cachorro");
+      alert("travar jogo");
+    }
   }
 
 
@@ -179,6 +197,7 @@ export default function App() {
         randomWord={randomWord}
         gameStats={gameStats}
         gameStatus={enableGame}
+        state={state}
       />
       <Letras
         randomWord={randomWord}
