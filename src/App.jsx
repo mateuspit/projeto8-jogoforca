@@ -15,6 +15,7 @@ export default function App() {
     errors: 0,
     image: 0,
     hits: 0,
+    showedWord: "",
     rightAnswer: false,
     randomWord: "",
     randomWordSplit: [],
@@ -139,6 +140,8 @@ export default function App() {
     }
   }
 
+
+
   function loseWordColor() {
     state.styleWord = "red";
     setState({ ...state, styleWord: state.styleWord });
@@ -177,7 +180,21 @@ export default function App() {
       setState({ ...state, randomWord: randomWord })
       console.log("Palavra sorteada: ", state.randomWord);
       changingLettersBoxColor();
+      wordToShow();
     }
+  }
+
+  function wordToShow() {
+
+    for (let i = 0; i < (state.randomWord.length * 2); i++) {
+      if (i % 2 == 0) {
+        state.showedWord += "_";
+      }
+      else {
+        state.showedWord += " ";
+      }
+    }
+    setState({ ...state, showedWord: state.showedWord })
   }
 
   function changingLettersBoxColor() {

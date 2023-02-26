@@ -1,6 +1,7 @@
-import { LeftSide, RightSide, Button, Game, 
+import {
+    LeftSide, RightSide, Button, Game,
     HangmanImage, ButtonsPanel, WordStyle
- } from "../styles";
+} from "../styles";
 import forca0 from "./../assets/img/forca0.png";
 import forca1 from "./../assets/img/forca1.png";
 import forca2 from "./../assets/img/forca2.png";
@@ -11,37 +12,34 @@ import forca6 from "./../assets/img/forca6.png";
 import React from "react";
 
 export default function Jogo(props) {
-    
+
     let image = forca0;
 
     // let redModeColor = "black";
 
     // let [redModeColor, setRedModeColor] = React.useState("black");
 
-    if(props.state.errors === 0){
+    if (props.state.errors === 0) {
         image = forca0;
     }
-    else if(props.state.errors === 1){
+    else if (props.state.errors === 1) {
         image = forca1;
     }
-    else if(props.state.errors === 2){
+    else if (props.state.errors === 2) {
         image = forca2;
     }
-    else if(props.state.errors === 3){
+    else if (props.state.errors === 3) {
         image = forca3;
     }
-    else if(props.state.errors === 4){
+    else if (props.state.errors === 4) {
         image = forca4;
     }
-    else if(props.state.errors === 5){
+    else if (props.state.errors === 5) {
         image = forca5;
     }
-    else if(props.state.errors === 6){
-        image = forca6;    
+    else if (props.state.errors === 6) {
+        image = forca6;
     }
-
-    
-
 
 
 
@@ -58,7 +56,7 @@ export default function Jogo(props) {
                     </Button>
                 </ButtonsPanel>
                 <WordStyle colorWordStyle={props.state.styleWord}>
-                    {`aa`}
+                    {props.state.showedWord}
                 </WordStyle>
             </RightSide>
         </Game>
