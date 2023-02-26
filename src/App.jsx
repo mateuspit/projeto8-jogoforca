@@ -252,6 +252,8 @@ export default function App() {
         ableGuessButton={state.ableGuess}
         state={state}
         setState={setState}
+        loseWordColor={loseWordColor}
+        winWordColor={winWordColor}
       />
     </div>
   );
