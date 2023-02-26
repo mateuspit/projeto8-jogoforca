@@ -25,6 +25,9 @@ export default function Chute(props) {
             props.loseWordColor();
             props.state.showedWord = props.state.randomWord;
             props.setState({ ...props.state, showedWord: props.state.showedWord });
+            props.state.errors = 6;
+            props.setState({ ...props.state, errors: props.state.errors });
+
             alert("travar jogo perdeu");
         }
         props.state.getInput = "";
