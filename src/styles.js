@@ -164,6 +164,7 @@ export const WordStyle = styled.div`
     font-weight: 700;
     font-size: 50px;
     margin-right: 53px;
+    color: ${props => props.colorWordStyle};
 `;
 
 export const WordFailedTry = styled.div`

@@ -14,6 +14,10 @@ export default function Jogo(props) {
     
     let image = forca0;
 
+    // let redModeColor = "black";
+
+    // let [redModeColor, setRedModeColor] = React.useState("black");
+
     if(props.state.errors === 0){
         image = forca0;
     }
@@ -33,8 +37,12 @@ export default function Jogo(props) {
         image = forca5;
     }
     else if(props.state.errors === 6){
-        image = forca6;
+        image = forca6;    
     }
+
+    
+
+
 
 
     return (
@@ -49,7 +57,7 @@ export default function Jogo(props) {
                         Escolher palavra
                     </Button>
                 </ButtonsPanel>
-                <WordStyle>
+                <WordStyle colorWordStyle={props.state.styleWord}>
                     {`aa`}
                 </WordStyle>
             </RightSide>

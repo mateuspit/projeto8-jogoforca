@@ -14,6 +14,7 @@ export default function App() {
     triedLetters: [],
     errors: 0,
     image: 0,
+    hits: 0,
     rightAnswer: false,
     randomWord: "",
     randomWordSplit: [],
@@ -21,7 +22,7 @@ export default function App() {
     ableGuess: true,
     backGroundColor: "#9FAAB5",
     color: "#798A9F",
-    styleWord: "Finding"
+    styleWord: "black"
   });
 
   const [triedWords, setTriedWords] = React.useState([]);
@@ -102,7 +103,7 @@ export default function App() {
           alert("plota letra");
           // alert("desabilita letra");
         }
-        else if (randomWordSplit[i] === "ó" || randomWordSplit[i] === "ô" || randomWordSplit[i] === "õ") {
+        else if ((randomWordSplit[i] === "ó" || randomWordSplit[i] === "ô" || randomWordSplit[i] === "õ") && state.triedLetters[state.triedLetters.length - 1] === "o") {
           countAmount++;
           showLetter = randomWordSplit[i];
           alert("ó, ô ou õ");
@@ -126,18 +127,27 @@ export default function App() {
       state.rightAnswer = false;
       setState({ ...state, rightAnswer: state.rightAnswer })
       console.log("rightAnswer: ", state.rightAnswer);
-      alert("Perdeu doido");
+      loseWordColor();
       alert("Travar o jogo");
     }
     else if (state.hits === randomWordSplit.length) {
       state.rightAnswer = true;
       setState({ ...state, rightAnswer: state.rightAnswer })
       console.log("rightAnswer: ", state.rightAnswer);
-      alert("Ganhou cachorro");
+      winWordColor();
       alert("travar jogo");
     }
   }
 
+  function loseWordColor() {
+    state.styleWord = "red";
+    setState({ ...state, styleWord: state.styleWord });
+  }
+
+  function winWordColor() {
+    state.styleWord = "green";
+    setState({ ...state, styleWord: state.styleWord });
+  }
 
   function receivingLetter(letter) {
     // const newTriedWords = [...triedWords, w];
