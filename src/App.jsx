@@ -139,7 +139,8 @@ export default function App() {
       loseWordColor();
       state.showedWord = randomWordSplit;
       setState({ ...state, showedWord: state.showedWord })
-      alert("Travar o jogo");
+      // alert("Travar o jogo");
+      lockGame();
     }
     else if (state.hits === randomWordSplit.length) {
       state.rightAnswer = true;
@@ -149,7 +150,30 @@ export default function App() {
       state.showedWord = randomWordSplit;
       setState({ ...state, showedWord: state.showedWord })
       alert("travar jogo");
+      lockGame();
     }
+  }
+
+  function lockGame(){
+    const newState = {
+      gameStatus: false,
+      clickedLetters: [],
+      triedLetters: [],
+      errors: 0,
+      image: 0,
+      hits: 0,
+      getInput: "",
+      showedWord: [],
+      rightAnswer: false,
+      randomWord: "",
+      randomWordSplit: [],
+      ableLetters: true,
+      ableGuess: true,
+      backGroundColor: "#9FAAB5",
+      color: "#798A9F",
+      styleWord: "black"
+    };
+    setState(newState);
   }
 
 
@@ -254,6 +278,7 @@ export default function App() {
         setState={setState}
         loseWordColor={loseWordColor}
         winWordColor={winWordColor}
+        lockGame={lockGame}
       />
     </div>
   );

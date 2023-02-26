@@ -20,6 +20,7 @@ export default function Chute(props) {
             props.winWordColor();
             props.state.showedWord = props.state.randomWord;
             props.setState({ ...props.state, showedWord: props.state.showedWord });
+            props.lockGame();
             alert("travar jogo ganhou");
         } else {
             props.loseWordColor();
@@ -27,7 +28,7 @@ export default function Chute(props) {
             props.setState({ ...props.state, showedWord: props.state.showedWord });
             props.state.errors = 6;
             props.setState({ ...props.state, errors: props.state.errors });
-
+            props.lockGame();
             alert("travar jogo perdeu");
         }
         props.state.getInput = "";
