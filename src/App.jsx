@@ -15,6 +15,7 @@ export default function App() {
     errors: 0,
     image: 0,
     hits: 0,
+    getInput: "",
     showedWord: [],
     rightAnswer: false,
     randomWord: "",
@@ -249,6 +250,8 @@ export default function App() {
         randomWord={randomWord}
         gameStats={gameStats}
         ableGuessButton={state.ableGuess}
+        state={state}
+        setState={setState}
       />
     </div>
   );
