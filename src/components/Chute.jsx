@@ -18,10 +18,14 @@ export default function Chute(props) {
     function guess() {
         if (guessValue === props.state.randomWord) {
             props.winWordColor();
-            alert("bom chute");
+            props.state.showedWord = props.state.randomWord;
+            props.setState({ ...props.state, showedWord: props.state.showedWord });
+            alert("travar jogo ganhou");
         } else {
             props.loseWordColor();
-            alert("péssimo");
+            props.state.showedWord = props.state.randomWord;
+            props.setState({ ...props.state, showedWord: props.state.showedWord });
+            alert("travar jogo perdeu");
         }
         props.state.getInput = "";
         props.setState({ ...props.state, getInput: props.state.getInput });
