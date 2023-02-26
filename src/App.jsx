@@ -15,7 +15,7 @@ export default function App() {
     errors: 0,
     image: 0,
     hits: 0,
-    showedWord: "",
+    showedWord: [],
     rightAnswer: false,
     randomWord: "",
     randomWordSplit: [],
@@ -64,51 +64,58 @@ export default function App() {
         if (randomWordSplit[i] === state.triedLetters[state.triedLetters.length - 1]) {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("plota letra");
-          console.log(randomWordSplit.length);
+          // alert("plota letra");
+          state.showedWord[i*2] = randomWordSplit[i];
+          // console.log(randomWordSplit);
           // console.log(state.hits);
           // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "ú") && state.triedLetters[state.triedLetters.length - 1] === "u") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("ú");
-          alert("plota letra");
+          state.showedWord[i*2] = randomWordSplit[i];
+          // alert("ú");
+          // alert("plota letra");
           // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "ç") && state.triedLetters[state.triedLetters.length - 1] === "c") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("ç");
-          alert("plota letra");
+          state.showedWord[i*2] = randomWordSplit[i];
+          // alert("ç");
+          // alert("plota letra");
           // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "í") && state.triedLetters[state.triedLetters.length - 1] === "i") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("í");
-          alert("plota letra");
+          state.showedWord[i*2] = randomWordSplit[i];
+          // alert("í");
+          // alert("plota letra");
           // alert("desabilita letra");
         }
         else if (randomWordSplit[i] === "é" || randomWordSplit[i] === "ê") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("é ou ê");
-          alert("plota letra");
+          state.showedWord[i*2] = randomWordSplit[i];
+          // alert("é ou ê");
+          // alert("plota letra");
           // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "á" || randomWordSplit[i] === "â" || randomWordSplit[i] === "ã") && state.triedLetters[state.triedLetters.length - 1] === "a") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("à, â ou ã");
-          alert("plota letra");
+          state.showedWord[i*2] = randomWordSplit[i];
+          // alert("à, â ou ã");
+          // alert("plota letra");
           // alert("desabilita letra");
         }
         else if ((randomWordSplit[i] === "ó" || randomWordSplit[i] === "ô" || randomWordSplit[i] === "õ") && state.triedLetters[state.triedLetters.length - 1] === "o") {
           countAmount++;
           showLetter = randomWordSplit[i];
-          alert("ó, ô ou õ");
-          alert("plota letra");
+          state.showedWord[i*2] = randomWordSplit[i];
+          // alert("ó, ô ou õ");
+          // alert("plota letra");
           // alert("desabilita letra");
         }
         else {
@@ -129,6 +136,8 @@ export default function App() {
       setState({ ...state, rightAnswer: state.rightAnswer })
       console.log("rightAnswer: ", state.rightAnswer);
       loseWordColor();
+      state.showedWord = randomWordSplit;
+      setState({ ...state, showedWord: state.showedWord })
       alert("Travar o jogo");
     }
     else if (state.hits === randomWordSplit.length) {
@@ -136,6 +145,8 @@ export default function App() {
       setState({ ...state, rightAnswer: state.rightAnswer })
       console.log("rightAnswer: ", state.rightAnswer);
       winWordColor();
+      state.showedWord = randomWordSplit;
+      setState({ ...state, showedWord: state.showedWord })
       alert("travar jogo");
     }
   }
@@ -188,10 +199,10 @@ export default function App() {
 
     for (let i = 0; i < (state.randomWord.length * 2); i++) {
       if (i % 2 == 0) {
-        state.showedWord += "_";
+        state.showedWord.push("_");
       }
       else {
-        state.showedWord += " ";
+        state.showedWord.push(" ");
       }
     }
     setState({ ...state, showedWord: state.showedWord })
