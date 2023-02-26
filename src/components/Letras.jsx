@@ -40,17 +40,6 @@ function Letra(props) {
 
 
     function letterDisable(w) {
-        // const letterColor = "#798A9F";
-
-        // props.changingLettersBoxColor.backGroundColor = "#9FAAB5";
-        // props.changingLettersBoxColor.color = "#798A9F";
-        // props.changingIndividualLetterBoxColor({
-        //     ...props.changingLettersBoxColor,
-        //     backGroundColor: props.changingLettersBoxColor.backGroundColor,
-        //     color: props.changingLettersBoxColor.color
-        // });
-        // alert(w);
-
         backGroundColor = "#9FAAB5";
         // backGroundColor = "blue";
         setBackGroundColor(backGroundColor)
@@ -59,6 +48,8 @@ function Letra(props) {
         ableButton = true;
         setAbleButton(ableButton);
     }
+
+    
 
     return (
         <>

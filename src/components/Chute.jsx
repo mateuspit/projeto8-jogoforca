@@ -21,7 +21,6 @@ export default function Chute(props) {
             props.state.showedWord = props.state.randomWord;
             props.setState({ ...props.state, showedWord: props.state.showedWord });
             props.lockGame();
-            alert("travar jogo ganhou");
         } else {
             props.loseWordColor();
             props.state.showedWord = props.state.randomWord;
@@ -29,7 +28,6 @@ export default function Chute(props) {
             props.state.errors = 6;
             props.setState({ ...props.state, errors: props.state.errors });
             props.lockGame();
-            alert("travar jogo perdeu");
         }
         props.state.getInput = "";
         props.setState({ ...props.state, getInput: props.state.getInput });
