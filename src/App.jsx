@@ -198,7 +198,8 @@ export default function App() {
   }
 
   function enableGame() {
-    alert("restart game");
+    // alert("restart game");
+    console.log("restart game");
     console.log("estado: ",state);
     if (state.gameStatus === false) {
       // state.individualChange = true;

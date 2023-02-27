@@ -55,12 +55,12 @@ function Letra(props) {
 
         if (props.changingLettersBoxColor.gameStatus) {
             // console.log("individual!");
-            console.log("INDIVIDUAL: indiviualchange: ",props.changingLettersBoxColor.individualChange);
+            console.log("INDIVIDUAL: indiviualchange: ",props.changingLettersBoxColor.individualChange,props.changingLettersBoxColor.gameStatus);
             return backGroundColor;
         }
         else {
             // console.log("geral!");
-            console.log("GERAL: indiviualchange: ",props.changingLettersBoxColor.individualChange);
+            console.log("GERAL: indiviualchange: ",props.changingLettersBoxColor.individualChange,props.changingLettersBoxColor.gameStatus);
             return props.changingLettersBoxColor.backGroundColor;
         }
     }
