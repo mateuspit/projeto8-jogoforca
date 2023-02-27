@@ -156,7 +156,6 @@ export default function App() {
 
 
   function lockGame() {
-    alert("lockGameeeeeee")
     state.gameStatus = false;
     state.ableLetters = true;
     state.ableGuess = true;
@@ -198,9 +197,13 @@ export default function App() {
   }
 
   function enableGame() {
+    alert("restart game");
+    console.log("estado: ",state);
     if (state.gameStatus === false) {
       state.gameStatus = true;
       setState({ ...state, enableStatus: state.gameStatus })
+      state.hits = 0;
+      setState({ ...state, hits: state.hits })
       state.ableLetters = false;
       setState({ ...state, ableLetters: state.ableLetters })
       state.ableGuess = false;
@@ -212,12 +215,6 @@ export default function App() {
       setState({ ...state, styleWord: state.styleWord })
       state.showedWord = [];
       setState({ ...state, showedWord: state.showedWord })
-
-
-      // showedWord:"",
-      // styleWord: "black"
-      // gameStats.enable = enableStatus;
-      // console.log(gameStatus.enable);
       console.log("Jogo começou: ", state.gameStatus);
       const randomWord = getRandomWord();
       state.randomWord = randomWord;
