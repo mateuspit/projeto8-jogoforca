@@ -46,16 +46,16 @@ export default function Jogo(props) {
     return (
         <Game>
             <LeftSide>
-                <HangmanImage src={image} alt={image}></HangmanImage>
+                <HangmanImage data-test="game-image" src={image} alt={image}></HangmanImage>
             </LeftSide>
             <RightSide>
                 <ButtonsPanel>
                     {/* <Button onClick={()=>alert("1")}> */}
-                    <Button onClick={props.gameStatus}>
+                    <Button data-test="choose-word" onClick={props.gameStatus}>
                         Escolher palavra
                     </Button>
                 </ButtonsPanel>
-                <WordStyle colorWordStyle={props.state.styleWord}>
+                <WordStyle data-test="word" colorWordStyle={props.state.styleWord}>
                     {props.state.showedWord}
                 </WordStyle>
             </RightSide>

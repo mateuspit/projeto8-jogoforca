@@ -40,6 +40,7 @@ export default function Chute(props) {
                 Já sei a palavra!
             </LabelGuess>
             <InputGuess
+                data-test="guess-input"
                 type="text"
                 id="guessWord"
                 value={guessValue}
@@ -48,7 +49,7 @@ export default function Chute(props) {
 
             </InputGuess >
             {/* <ButtonGuess onClick={()=>alert("3")}> */}
-            <ButtonGuess disabled={props.ableGuessButton} onClick={() => guess()}>
+            <ButtonGuess data-test="guess-button" disabled={props.ableGuessButton} onClick={() => guess()}>
                 Chutar
             </ButtonGuess>
         </GuessSpot >

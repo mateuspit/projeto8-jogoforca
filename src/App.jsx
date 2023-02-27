@@ -15,6 +15,7 @@ export default function App() {
     errors: 0,
     image: 0,
     hits: 0,
+    individualChange: false,
     getInput: "",
     showedWord: [],
     rightAnswer: false,
@@ -230,7 +231,7 @@ export default function App() {
     for (let i = 0; i < (state.randomWord.length * 2); i++) {
       if (i % 2 == 0) {
         state.showedWord.push("_");
-      }
+      } 
       else {
         state.showedWord.push(" ");
       }

@@ -50,37 +50,53 @@ function Letra(props) {
     }
 
     function boxColorBackGroundColor() {
+        // console.log("indiviualchange: ",props.changingLettersBoxColor.individualChange);
         if (props.changingLettersBoxColor.gameStatus) {
-            // console.log("cor individual")
-            // console.log(props.changingLettersBoxColor.gameStatus);
+            console.log("individual!");
             return backGroundColor;
         }
-        // else if (props.changingLettersBoxColor.rightAnswer === true){
-        //     console.log("hello there")
-        //     return props.changingLettersBoxColor.backGroundColor;
-        // }       
-        else{
-            // console.log("cor geral")
-            // console.log(props.changingLettersBoxColor.gameStatus);
+        else {
+            console.log("geral!");
             return props.changingLettersBoxColor.backGroundColor;
-        }       
+        }
     }
 
-    const outPutBackGroundColor = boxColorBackGroundColor();
+    function boxColor() {
+        if (props.changingLettersBoxColor.gameStatus) {
+            return color;
+        }
+        else {
+            return props.changingLettersBoxColor.color;
+        }
+    }
 
-    
+    function boxAbleButton() {
+        if (props.changingLettersBoxColor.gameStatus) {
+            return ableButton;
+        }
+        else {
+            return props.ableLettersButton;
+        }
+    }
+
+    const outputBackGroundColor = boxColorBackGroundColor();
+    const outputColor = boxColor();
+    const outputAbleButton = boxAbleButton();
+
+
 
     return (
         <>
             {/* <LetterStyleBox onClick={() => {letterDisable(props.letra); alert("2");}} backGroundColor={backGroundColor}> */}
             <LetterStyleBox
-                disabled={props.changingLettersBoxColor.gameStatus ? ableButton : props.ableLettersButton}
+                data-test="letter"
+                disabled={outputAbleButton}
                 onClick={() => {
                     letterDisable(props.letra);
                     props.checkWord(props.letra);
                 }}
-                backGroundColor={outPutBackGroundColor}
-                color={props.changingLettersBoxColor.gameStatus ? color : props.changingLettersBoxColor.color}
+                backGroundColor={outputBackGroundColor}
+                color={outputColor}
             >
                 {props.letra}
             </LetterStyleBox>
