@@ -201,6 +201,8 @@ export default function App() {
     alert("restart game");
     console.log("estado: ",state);
     if (state.gameStatus === false) {
+      // state.individualChange = true;
+      // setState({ ...state, individualChange: state.individualChange })
       state.gameStatus = true;
       setState({ ...state, enableStatus: state.gameStatus })
       state.hits = 0;

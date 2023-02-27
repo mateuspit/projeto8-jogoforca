@@ -40,6 +40,7 @@ export default function Chute(props) {
                 Já sei a palavra!
             </LabelGuess>
             <InputGuess
+                disabled={props.ableGuessButton}
                 data-test="guess-input"
                 type="text"
                 id="guessWord"
