@@ -49,6 +49,25 @@ function Letra(props) {
         setAbleButton(ableButton);
     }
 
+    function boxColorBackGroundColor() {
+        if (props.changingLettersBoxColor.gameStatus) {
+            // console.log("cor individual")
+            // console.log(props.changingLettersBoxColor.gameStatus);
+            return backGroundColor;
+        }
+        // else if (props.changingLettersBoxColor.rightAnswer === true){
+        //     console.log("hello there")
+        //     return props.changingLettersBoxColor.backGroundColor;
+        // }       
+        else{
+            // console.log("cor geral")
+            // console.log(props.changingLettersBoxColor.gameStatus);
+            return props.changingLettersBoxColor.backGroundColor;
+        }       
+    }
+
+    const outPutBackGroundColor = boxColorBackGroundColor();
+
     
 
     return (
@@ -60,7 +79,7 @@ function Letra(props) {
                     letterDisable(props.letra);
                     props.checkWord(props.letra);
                 }}
-                backGroundColor={props.changingLettersBoxColor.gameStatus ? backGroundColor : props.changingLettersBoxColor.backGroundColor}
+                backGroundColor={outPutBackGroundColor}
                 color={props.changingLettersBoxColor.gameStatus ? color : props.changingLettersBoxColor.color}
             >
                 {props.letra}
