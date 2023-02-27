@@ -220,7 +220,8 @@ export default function App() {
       state.showedWord = [];
       setState({ ...state, showedWord: state.showedWord })
       console.log("Jogo começou: ", state.gameStatus);
-      const randomWord = getRandomWord();
+      const randomWord = "patassaura";
+      // const randomWord = getRandomWord();
       state.randomWord = randomWord;
       setState({ ...state, randomWord: randomWord })
       console.log("Palavra sorteada: ", state.randomWord);
